@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box</title>
+    <style>
+        main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        fieldset{
+            background-color: orchid;
+        }
+        button:hover{
+            background-color: salmon;
+            color: slateblue;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <fieldset>
+        <div class="result-chat"></div><br>
+        <div class="chat">
+              <input type="text" class="input-chat">
+              <button class="btn-chat">Kirim</button>
+        </div>
+        </fieldset>
+    </main>
+
+    <script>
+        let resultChat = document.querySelector(".result-chat");
+        const inputChat = document.querySelector(".input-chat");
+        const btnChat = document.querySelector(".btn-chat");
+
+        btnChat.addEventListener("click", function() {
+            resultChat.innerHTML = resultChat.innerHTML + "<br>" + inputChat.value;
+            inputChat.value = "";
+        })
+    </script>
+</body>
+</html>
